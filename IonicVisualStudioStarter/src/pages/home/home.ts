@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { NavController } from 'ionic-angular';
-
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+    selector: 'page-home',
+    templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
-    
-  }
-  
-  onLink(url: string) {
-      window.open(url);
-  }
+    private navCtrl: NavController;
+
+    constructor(navCtrl: NavController, navParams: NavParams) {
+        this.navCtrl = navCtrl;
+    }
+
+    public onLink(url: string): void {
+        window.open(url);
+    }
 }
